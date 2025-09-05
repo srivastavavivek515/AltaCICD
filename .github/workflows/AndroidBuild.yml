@@ -31,7 +31,28 @@ jobs:
         run: chmod +x ./gradle
 
       - name: Run lint
-        run: ./gradlew app:lintDebug
+        run: ./gradlew app:lint
 
       - name: Show Reports
         run: find. -name "lint-results*.html" || true
+
+      - name: Upload lint Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-report
+          path: "**/build/reports/lint-results*.html"
+
+      - name: Run Unit Test
+        run: ./gradlew test
+
+
+
+      # Runs a single command using the runners shell
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AndroidCICD.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
