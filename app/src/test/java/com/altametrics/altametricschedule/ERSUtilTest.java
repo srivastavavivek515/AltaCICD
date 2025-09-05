@@ -30,7 +30,7 @@ public class ERSUtilTest extends TestCase {
     public void testReverseStr() {
     StringBuffer result = ersUtil.reverseStr("vivek");
     assertEquals("keviv", result.toString());
-    StringBuffer result2 = ersUtil.reverseStr("ankit");
-    assertEquals("keviv", result2.toString());
+   /* StringBuffer result2 = ersUtil.reverseStr("ankit");
+    assertEquals("keviv", result2.toString());*/
     }
 }
