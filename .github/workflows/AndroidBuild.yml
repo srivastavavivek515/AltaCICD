@@ -45,8 +45,6 @@ jobs:
       - name: Run Unit Test
         run: ./gradlew test
 
-
-
       # Runs a single command using the runners shell
       - name: Build with Gradle
         run: ./gradlew build
