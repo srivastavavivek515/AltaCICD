@@ -31,13 +31,13 @@ jobs:
         run: chmod +x ./gradle
 
       - name: Run lint
-        run: ./gradlew app:lint
+        run: ./gradlew app:lintDebug
 
       - name: Upload lint Report
         uses: actions/upload-artifact@v4
         with:
           name: lint-report
-          path: app/lint-results.html
+          path: app/build/reports/lint-results.html
 
       - name: Run Unit Test
         run: ./gradlew test
